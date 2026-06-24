@@ -30,44 +30,55 @@ export default function Home() {
       <section className={styles.hero}>
         <div className={styles.heroBackground}>
           <div className={styles.heroOverlay}></div>
-          <Image 
-            src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=2070&auto=format&fit=crop" 
-            alt="" 
-            fill 
+          <Image
+            src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=2070&auto=format&fit=crop"
+            alt=""
+            fill
             className={styles.heroImage}
             priority
           />
         </div>
-        
-        <div className="container">
-          <motion.div 
-            className={styles.heroContent}
-            initial="hidden"
-            animate="visible"
-            variants={containerVariants}
-          >
-            <motion.h1 variants={itemVariants} className={styles.heroTitle}>
-              Enriching Lives Through <span className={styles.textAccent}>Value Education</span>
-            </motion.h1>
-            <motion.p variants={itemVariants} className={styles.heroSubtitle}>
-              Wisdom Care e-Techno School & PU College is dedicated to providing world-class facilities and education to shape the leaders of tomorrow.
-            </motion.p>
-            <motion.div variants={itemVariants} className={styles.heroActions}>
-              <Link href="/admissions" className="btn-primary">
-                Apply for Admissions <ArrowRight size={20} className={styles.iconMargin} />
-              </Link>
-              <Link href="/about" className="btn-secondary-glass">
-                Discover Our Campus
-              </Link>
+
+        <div className={`container ${styles.heroContainer}`}>
+          <div className={styles.heroGrid}>
+            <motion.div
+              className={styles.heroContent}
+              initial="hidden"
+              animate="visible"
+              variants={containerVariants}
+            >
+              <motion.h1 variants={itemVariants} className={styles.heroTitle}>
+                Enriching Lives Through <span className={styles.textAccent}>Value Education</span>
+              </motion.h1>
+              <motion.p variants={itemVariants} className={styles.heroSubtitle}>
+                Wisdom Care e-Techno School & PU College is dedicated to providing world-class facilities and education to shape the leaders of tomorrow.
+              </motion.p>
+              <motion.div variants={itemVariants} className={styles.heroActions}>
+                <Link href="/admissions" className="btn-primary">
+                  Apply for Admissions <ArrowRight size={20} className={styles.iconMargin} />
+                </Link>
+                <Link href="/about" className="btn-secondary-glass">
+                  Discover Our Campus
+                </Link>
+              </motion.div>
             </motion.div>
-          </motion.div>
+
+            <div className={styles.heroImageWrapper}>
+              <div className={styles.studentGlow}></div>
+              <img
+                src="/student.png"
+                alt="Student"
+                className={styles.studentImage}
+              />
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Stats Section */}
       <section className={styles.statsSection}>
         <div className="container">
-          <motion.div 
+          <motion.div
             className={styles.statsGrid}
             initial="hidden"
             whileInView="visible"
@@ -101,7 +112,7 @@ export default function Home() {
       {/* Programs Section */}
       <section className={styles.programsSection}>
         <div className="container">
-          <motion.h2 
+          <motion.h2
             className="section-title"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -109,9 +120,9 @@ export default function Home() {
           >
             Our Programs
           </motion.h2>
-          
+
           <div className={styles.programsGrid}>
-            <motion.div 
+            <motion.div
               className={styles.programCard}
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -119,11 +130,11 @@ export default function Home() {
               viewport={{ once: true }}
             >
               <div className={styles.programImageWrapper}>
-                <Image 
-                  src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2132&auto=format&fit=crop" 
-                  alt="e-Techno School" 
-                  fill 
-                  className={styles.programImage} 
+                <Image
+                  src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2132&auto=format&fit=crop"
+                  alt="e-Techno School"
+                  fill
+                  className={styles.programImage}
                 />
               </div>
               <div className={styles.programContent}>
@@ -135,7 +146,7 @@ export default function Home() {
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className={styles.programCard}
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -143,11 +154,11 @@ export default function Home() {
               viewport={{ once: true }}
             >
               <div className={styles.programImageWrapper}>
-                <Image 
-                  src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2070&auto=format&fit=crop" 
-                  alt="PU College" 
-                  fill 
-                  className={styles.programImage} 
+                <Image
+                  src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2070&auto=format&fit=crop"
+                  alt="PU College"
+                  fill
+                  className={styles.programImage}
                 />
               </div>
               <div className={styles.programContent}>
@@ -165,7 +176,7 @@ export default function Home() {
       {/* Call to Action */}
       <section className={styles.ctaSection}>
         <div className="container">
-          <motion.div 
+          <motion.div
             className={styles.ctaBox}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}

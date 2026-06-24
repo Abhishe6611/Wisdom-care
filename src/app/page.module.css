@@ -7,10 +7,9 @@
    ═══════════════════════════════════════════ */
 .hero {
   position: relative;
-  height: 100vh;
-  min-height: 650px;
+  min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   overflow: hidden;
 }
 
@@ -72,15 +71,81 @@
 .heroContainer {
   position: relative;
   z-index: 2;
-  padding-top: 80px;
+  padding-top: 100px;
+  width: 100%;
+  display: flex;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: stretch;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .heroGrid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 2rem;
+  }
+}
+
+.heroImageWrapper {
+  align-self: flex-end;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  animation: floatStudent 7s ease-in-out infinite;
+  transform-origin: bottom center;
+  margin-bottom: 3rem;
+}
+
+.studentGlow {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+  filter: blur(50px);
+}
+
+.studentImage {
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+  height: auto;
+  max-height: 380px;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 30px rgba(0,0,0,0.3));
+}
+
+@media (min-width: 768px) {
+  .studentImage {
+    max-height: 550px;
+  }
+}
+
+@keyframes floatStudent {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 .heroContent {
+  align-self: center;
   max-width: 720px;
+  padding-bottom: 2rem;
 }
 
 .heroTitle {
-  font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+  font-size: clamp(1.8rem, 8vw, 4.5rem);
   color: #ffffff;
   margin-bottom: 1.5rem;
   line-height: 1.08;
@@ -151,8 +216,14 @@
 
 .statsGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 1.25rem;
+}
+
+@media (min-width: 480px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (min-width: 768px) {

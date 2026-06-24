@@ -33,10 +33,16 @@
 
 .logoHighlight {
   font-family: var(--font-heading);
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 800;
   color: #ffffff;
   letter-spacing: -0.02em;
+}
+
+@media (min-width: 380px) {
+  .logoHighlight {
+    font-size: 1.4rem;
+  }
 }
 
 .header.scrolled .logoHighlight {
@@ -107,6 +113,16 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+.applyButton {
+  display: none;
+}
+
+@media (min-width: 380px) {
+  .applyButton {
+    display: inline-flex;
+  }
 }
 
 .mobileMenuBtn {

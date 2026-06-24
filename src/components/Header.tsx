@@ -63,7 +63,7 @@ export default function Header() {
         </nav>
 
         <div className={styles.actions}>
-          <Link href="/admissions" className="btn-primary">Apply Now</Link>
+          <Link href="/admissions" className={`btn-primary ${styles.applyButton}`}>Apply Now</Link>
           <button 
             className={styles.mobileMenuBtn} 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
